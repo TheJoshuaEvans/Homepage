@@ -1,0 +1,10 @@
+# Force LF and final new line for all files
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Enforce indentation and white space trimming for application files
+[*.{js,json}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
