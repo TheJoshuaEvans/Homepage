@@ -1,0 +1,15 @@
+version: '3.8'
+
+name: Homepage
+
+services:
+  node: 
+    container_name: HomepageNode
+    image: node:18.4.0-alpine
+    restart: always
+    ports:
+      - 8080:8080
+    working_dir: "/app"
+    volumes:
+      - "./:/app"
+    command: "npm run server"

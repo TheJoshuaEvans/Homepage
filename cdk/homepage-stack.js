@@ -20,7 +20,7 @@ class HomepageStack extends CDK.Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
 
-    // |---- Route53 ----|
+    // |---- Setup ----|
     // Import the hosted zone
     const hostedZone = Route53.HostedZone.fromLookup(this, 'HomepageHostedZone', {
       domainName: cdkConfig.HOMEPAGE_DOMAIN_NAME,
@@ -66,7 +66,7 @@ class HomepageStack extends CDK.Stack {
       domainNames: [cdkConfig.HOMEPAGE_HOST_NAME, cdkConfig.HOMEPAGE_HOST_WWW_NAME],
     });
 
-    // |---- Route53 (Continued) ----|
+    // |---- Route53 ----|
     // Create the A record for the distribution
     new Route53.ARecord(this, 'HomepageARecord', {
       recordName: cdkConfig.HOMEPAGE_HOST_NAME,
