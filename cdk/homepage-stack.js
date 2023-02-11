@@ -66,6 +66,7 @@ class HomepageStack extends CDK.Stack {
       domainNames: [cdkConfig.HOMEPAGE_HOST_NAME, cdkConfig.HOMEPAGE_HOST_WWW_NAME],
     });
 
+    // |---- Route53 (Continued) ----|
     // Create the A record for the distribution
     new Route53.ARecord(this, 'HomepageARecord', {
       recordName: cdkConfig.HOMEPAGE_HOST_NAME,
